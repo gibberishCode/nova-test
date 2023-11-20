@@ -1,0 +1,2 @@
+class GoogleDriveServiceError(Exception):
+    pass
