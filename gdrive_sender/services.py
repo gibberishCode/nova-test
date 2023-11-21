@@ -15,7 +15,7 @@ class GoogleDriveService:
         try:
             self.credentials = Credentials.from_service_account_file(
                 settings.GOOGLE_SERVICE_ACCOUNT_FILE,
-                scopes=["https://www.googleapis.com/auth/drive"],
+                scopes=settings.GOOGLE_SCOPES,
             )
             self.service = build("drive", "v3", credentials=self.credentials)
         except (GoogleAuthError, FileNotFoundError) as e:
